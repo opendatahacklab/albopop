@@ -24,11 +24,25 @@ class School{
 	public $codiceistitutoriferimento;
 	public $codicescuola;
 	public $denominazione;
+	public $sitowebscuola;
 
 	function __construct($row){
 		$this->codiceistitutoriferimento=$row[4];
 		$this->codicescuola=$row[6];
 		$this->denominazionescuola=$row[7];
+		$this->sitowebscuola=$this->refineWebSiteField($row[18]);
+	}
+
+	/**
+	 *  Process the web site field in order to armonize all the fields
+	 */
+	private function refineWebSiteField($webSiteField){
+		if (strcmp($webSiteField, 'Non Disponibile')===0)
+			return null;
+		$clearedbytypo=preg_replace('/\s+/', '', $webSiteField);
+		$lowered=strtolower($clearedbytypo);
+		$withschema='http://'.str_replace('http://','',$lowered);
+		return $withschema;
 	}
 }
 ?>

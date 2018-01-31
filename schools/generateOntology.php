@@ -25,6 +25,8 @@ foreach($parser as $s){
 		$organization->addName($s->denominazionescuola);
 		if ($s->codicescuola!=$s->codiceistitutoriferimento)
 			$organization->setAsSuborganization($ns.$s->codiceistitutoriferimento);
+		if (isset($s->sitowebscuola))
+			$organization->addWebPage($s->sitowebscuola);
 	}
 }
 fclose($f); 
