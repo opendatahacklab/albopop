@@ -1,6 +1,6 @@
 <?php
 /**
- *  A school in the sense of http://dati.istruzione.it/opendata/opendata/catalogo/elements1/leaf/?datasetId=DS0400SCUANAGRAFESTAT
+ *  A school and its website 
  *
  * Copyright 2018 Cristiano Longo
  *
@@ -19,23 +19,17 @@
  *
  * @author Cristiano Longo 
  */
+
 require_once('CSVParser.php');
+//CODICESCUOLA, SITOWEBSCUOLA
 
-//ANNOSCOLASTICO, AREAGEOGRAFICA, REGIONE, PROVINCIA, CODICEISTITUTORIFERIMENTO, DENOMINAZIONEISTITUTORIFERIMENTO, CODICESCUOLA, DENOMINAZIONESCUOLA, INDIRIZZOSCUOLA, CAPSCUOLA, CODICECOMUNESCUOLA, DESCRIZIONECOMUNE, DESCRIZIONECARATTERISTICASCUOLA, DESCRIZIONETIPOLOGIAGRADOISTRUZIONESCUOLA, INDICAZIONESEDEDIRETTIVO, INDICAZIONESEDEOMNICOMPRENSIVO, INDIRIZZOEMAILSCUOLA, INDIRIZZOPECSCUOLA, SITOWEBSCUOLA
-
-class School{
-	public $annoscolastico;
-	public $codiceistitutoriferimento;
+class SchoolWebsite{
 	public $codicescuola;
-	public $denominazione;
 	public $sitowebscuola;
 
 	function __construct($row){
-		$this->annoscolastico=$row[0];
-		$this->codiceistitutoriferimento=$row[4];
-		$this->codicescuola=$row[6];
-		$this->denominazionescuola=$row[7];
-		$this->sitowebscuola=$row[18];
+		$this->codicescuola=$row[0];
+		$this->sitowebscuola=$row[1];
 	}
 
 	/**
@@ -43,14 +37,17 @@ class School{
 	 */
 	public static function parse($handle){
 		return new CSVParser($handle, function($row){
-				return new School($row);
+				return new SchoolWebsite($row);
 			});
 	}
 
 	/**
-	 *  Process the web site field in order to armonize all the fields
+	 * Transform the web site field in order to remove typo errors and armonize all the fields.
+	 * Note that the object field $this->sitowebscuola is not changed by the execution of this method. 
+	 * The refined web site address is just returned.
 	 */
-	private function refineWebSiteField($webSiteField){
+	public function getRefinedWebsite(){
+		$webSiteField=$this->sitowebscuola;
 		if (strcmp($webSiteField, 'Non Disponibile')===0)
 			return null;
 		$clearedbytypo=preg_replace('/\s+/', '', $webSiteField);

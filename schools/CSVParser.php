@@ -1,6 +1,6 @@
 <?php
 class CSVParser implements Iterator{
-
+	private $nullarray = array(null);
 	private $handle;
 	private $rowProcessingFunction;
 	private $current = null;
@@ -25,7 +25,7 @@ class CSVParser implements Iterator{
 		else{
 			$processor=$this->rowProcessingFunction;
 			$row=fgetcsv($this->handle, 1000, ",");
-			$this->current=$processor($row);
+			$this->current= $row[0]!==null ? $processor($row) : null;
 		}	
 	}
 
