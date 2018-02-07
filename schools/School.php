@@ -19,18 +19,32 @@
  *
  * @author Cristiano Longo 
  */
+require_once('CSVParser.php');
+
+//ANNOSCOLASTICO, AREAGEOGRAFICA, REGIONE, PROVINCIA, CODICEISTITUTORIFERIMENTO, DENOMINAZIONEISTITUTORIFERIMENTO, CODICESCUOLA, DENOMINAZIONESCUOLA, INDIRIZZOSCUOLA, CAPSCUOLA, CODICECOMUNESCUOLA, DESCRIZIONECOMUNE, DESCRIZIONECARATTERISTICASCUOLA, DESCRIZIONETIPOLOGIAGRADOISTRUZIONESCUOLA, INDICAZIONESEDEDIRETTIVO, INDICAZIONESEDEOMNICOMPRENSIVO, INDIRIZZOEMAILSCUOLA, INDIRIZZOPECSCUOLA, SITOWEBSCUOLA
 
 class School{
+	public $annoscolastico;
 	public $codiceistitutoriferimento;
 	public $codicescuola;
 	public $denominazione;
 	public $sitowebscuola;
 
 	function __construct($row){
+		$this->annoscolastico=$row[0];
 		$this->codiceistitutoriferimento=$row[4];
 		$this->codicescuola=$row[6];
 		$this->denominazionescuola=$row[7];
-		$this->sitowebscuola=$this->refineWebSiteField($row[18]);
+		$this->sitowebscuola=$row[18];
+	}
+
+	/**
+	 * Create an iterator which will parse the specified handle
+	 */
+	public static function parse($handle){
+		return new CSVParser($handle, function($row){
+				return new School($row);
+			});
 	}
 
 	/**
@@ -41,7 +55,9 @@ class School{
 			return null;
 		$clearedbytypo=preg_replace('/\s+/', '', $webSiteField);
 		$lowered=strtolower($clearedbytypo);
-		$withschema='http://'.str_replace('http://','',$lowered);
+		$removed_schema=str_replace('http://','',$lowered);
+		$removed_final_slash=str_replace('/','',$removed_schema);
+		$withschema='http://'.str_replace('http://','',$removed_final_slash);
 		return $withschema;
 	}
 }
