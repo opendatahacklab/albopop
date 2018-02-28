@@ -27,10 +27,8 @@ class URLChecker{
 	 * return true if the site corresponding to this url exists and it is working, false otherwise
 	 */
 	public function check($url){
-		if (array_key_exists($url, $this->checks)){
-			echo "cached \n";
+		if (array_key_exists($url, $this->checks))
 			return $this->checks[$url];
-		}
 		$r=$this->attemptDownload($url);
 		$this->checks[$url]=$r;
 		return $r;
@@ -56,13 +54,3 @@ class URLChecker{
 		return TRUE;
 	}
 }
-
-$u=new URLChecker();
-echo "http://www.icbrancati.it 000";
-echo $u->check('http://www.icbrancati.it')." -- \n";
-echo "http://www.circolodidatticosaurocatania.gov.it 403";
-echo $u->check('http://www.circolodidatticosaurocatania.gov.it')." -- \n";
-echo "http://www.icbrancati.it 000";
-echo $u->check('http://www.icbrancati.it')." -- \n";
-echo "http://opendatahacklab.org 200";
-echo $u->check('http://opendatahacklab.org')." -- \n";
