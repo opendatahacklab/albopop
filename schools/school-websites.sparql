@@ -1,0 +1,7 @@
+PREFIX miur: <http://www.miur.it/ns/miur#>
+
+SELECT ?school ?website WHERE {
+	?school miur:SITOWEBSCUOLA ?website .
+	FILTER (!regex(?website, "Non Disponibile")) 
+}
+ 

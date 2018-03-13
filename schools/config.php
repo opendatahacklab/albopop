@@ -21,4 +21,7 @@
  */
 
 define("PHPRDFGenerationToolsPATH","../../PHPRDFGenerationTools/");
+define("BASE","http://opendatahacklab.org/albopop/schools/");
+define("MIURNS","http://www.miur.it/ns/miur#");
+define("SCHOOLNS","http://opendatahacklab.org/schools/school/");
 ?>

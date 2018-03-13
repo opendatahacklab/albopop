@@ -79,7 +79,7 @@ class SchoolWebsiteCheck{
 		$testresult = ($this->testingFunction)($websitetxt);
 		$outcome= $testresult === FALSE ? RDFXMLEARLTestResult::$FAILED_OUTCOME_IRI : 
 			RDFXMLEARLTestResult::$PASSED_OUTCOME_IRI;
-		$result=new RDFXMLEARLTestResult($this->ontology, $this->ns.'testresult'.$this->testN,$outcome);
+		$result=new RDFXMLEARLTestResult($this->ontology, $this->ns.'testresult'.$this->testN,$outcome, new DateTime());
 		$this->cache[$websitetxt]=$result;
 		return $result;
 	}

@@ -1,0 +1,36 @@
+PREFIX miur: <http://www.miur.it/ns/miur#>
+PREFIX earl: <http://www.w3.org/ns/earl#>
+PREFIX test:<http://opendatahacklab.org/albopop/schools/websitetest.owl/>
+
+SELECT DISTINCT ?code ?description ?parentcode ?parentdescription ?website ?isuri ?isdomainname ?isworkinguri ?isworkingdomainname WHERE {
+	?school miur:CODICESCUOLA ?code .
+	?school miur:DENOMINAZIONESCUOLA ?description .
+	?school miur:CODICEISTITUTORIFERIMENTO ?parentcode .
+	?school miur:DENOMINAZIONEISTITUTORIFERIMENTO ?parentdescription .
+	?school miur:SITOWEBSCUOLA ?website .
+ 	OPTIONAL {
+		?testisuri earl:subject ?school .
+		?testisuri earl:test test:isuri .
+		?testisuri earl:result ?resultisuri .
+		?resultisuri earl:outcome ?isuri
+	 	OPTIONAL {
+			?testisworkinguri earl:subject ?school .
+			?testisworkinguri earl:test test:isworkinguri .
+			?testisworkinguri earl:result ?resultisworkinguri .
+			?resultisworkinguri earl:outcome ?isworkinguri
+		} 		
+	} 
+	OPTIONAL {
+		?testisdomainname earl:subject ?school .
+		?testisdomainname earl:test test:isdomainname .
+		?testisdomainname earl:result ?resultisdomainname .
+		?resultisdomainname earl:outcome ?isdomainname
+	 	OPTIONAL {
+			?testisworkingdomainname earl:subject ?school .
+			?testisworkingdomainname earl:test test:isworkingdomainname .
+			?testisworkingdomainname earl:result ?resultisworkingdomainname .
+			?resultisworkingdomainname earl:outcome ?isworkingdomainname
+		} 		
+	}
+} ORDER BY ?parentcode
+ 

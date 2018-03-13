@@ -35,22 +35,69 @@ $isUriTestCase=new RDFXMLEARLTestCase($ontology, $ns.'isuri');
 $isUriChecker=new SchoolWebsiteCheck($ontology, $isUriTestCase->iri, $ns.'isuri/', 'isUriCheck');
 
 function isDomainNameCheck($websitetxt){
-	return !(strpos(':',$websitetxt) ||
-	strpos('/',$websitetxt) ||
-	strpos('?',$websitetxt) ||
-	(filter_var("http://$websitetxt", FILTER_VALIDATE_URL)===FALSE));
+	return !(strpos($websitetxt,':') || 
+		strpos($websitetxt, '/') ||
+		strpos($websitetxt,'?') ||
+		strpos($websitetxt,'@') ||
+		filter_var("http://$websitetxt", FILTER_VALIDATE_URL)===FALSE);
 }
+
 $isDomainNameTestCase=new RDFXMLEARLTestCase($ontology, $ns.'isdomainname');
 $isDomainNameChecker=new SchoolWebsiteCheck($ontology, $isDomainNameTestCase->iri, $ns.'isdomainname/', 'isDomainNameCheck');
 
+/**
+ * Effectively attempt to connect to the url and download the corresponding resource. Return true if all its OK
+ */
+function isWorkingURICheck($url){
+	$handle=curl_init($url);
+	curl_setopt($handle, CURLOPT_FOLLOWLOCATION, TRUE);
+	curl_setopt($handle, CURLOPT_RETURNTRANSFER, TRUE);
+	$result=curl_exec($handle);
+	if ($result===FALSE){
+		curl_close($handle);
+		return FALSE;
+	}
+	$code=curl_getinfo($handle, CURLINFO_HTTP_CODE);
+	if (strcmp($code,'200')){
+		curl_close($handle);
+		return FALSE;
+	}
+	return TRUE;
+}
+$isWorkingURITestCase=new RDFXMLEARLTestCase($ontology, $ns.'isworkinguri');
+$isWorkingURIChecker=new SchoolWebsiteCheck($ontology, $isWorkingURLTestCase->iri, $ns.'isisworkinguri/', 'isWorkingURICheck');
+
+/**
+ * Same as isWorkingURICheck but just prepend the http schema to the domain name before check
+ */
+function isWorkingDomainNameCheck($domainName){
+	return isWorkingURICheck("http://$domainName");
+}
+$isWorkingDomainNameTestCase=new RDFXMLEARLTestCase($ontology, $ns.'isworkingdomainname');
+$isWorkingDomainNameURLChecker=new SchoolWebsiteCheck($ontology, $isWorkingDomainNameTestCase->iri, $ns.'isworkingdomainname/', 'isWorkingDomainNameCheck');
+
 $f = fopen( 'php://stdin', 'r' );
+$out = fopen( 'php://stderr', 'w+' );
 //skip header
 fgetcsv($f);
-
+$count=0;
 //parse rows
 while(($row = fgetcsv($f, 1000, ",")) !== FALSE)
-	if ($row[0]!==null && strpos($row[0],'http://')===0) //here we ignore blank nodes
-		$isUriChecker->testWebsite($row[0], $row[1]);			
+	//here we ignore blank nodes
+	if ($row[0]!==null && isUriCheck($row[0])) {
+		fwrite($out, "$count\n");
+		$count++;
+		$schooliri=$row[0];
+		$websitetxt=$row[1];
+		$isUriTest=$isUriChecker->testWebsite($schooliri, $websitetxt);
+		if ($isUriTest->isPassed())
+			$isWorkingURLChecker->testWebsite($schooliri, $websitetxt);
+		else if ($isUriTest->isFailed()){
+			$isDomainNameTest=$isDomainNameChecker->testWebsite($schooliri, $websitetxt);
+   			if ($isDomainNameTest->isPassed())
+				$isWorkingDomainNameURLChecker->testWebsite($schooliri, $websitetxt);
+		}
+	}		
 echo $ontology->getXML()->saveXML();
 
 ?>
