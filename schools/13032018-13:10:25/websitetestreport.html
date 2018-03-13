@@ -1,0 +1,1903 @@
+<html>
+	<head>
+		<style>
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}		
+
+*.passed{
+	background-color : #00ff00;
+}
+
+*.failed{
+	background-color : #ff0000;
+}
+		</style>	
+	</head>
+	<body>
+		<h1>Test sul Dataset delle Scuole Statali</h1>
+		<p>Questa pagina riporta i risultati di alcuni test eseguiti sul dataset <a href="http://dati.istruzione.it/opendata/opendata/catalogo/elements1/?area=Scuole">Informazioni anagrafiche scuole statali</a> (distribuzione RDF)
+		del  <em>Ministero dell'Istruzione dell'Universit&agrave; e della Ricerca</em>. &Egrave; stato eseguito il 13/03/2018 e ha riguardato solo le scuole nel comune di Catania.</p>
+		<p>Tutti i test sono eseguiti automaticamente e riguardano il valore del campo <em>SITOWEBSCUOLA</em>:</p>
+		<dl>
+			<dt>isUri</dt><dd>controlla se &egrave; conforme alla specifica <a href="https://www.rfc-editor.org/rfc/rfc3986.txt" title="RFC 3986">URI</a>;</dd>
+			<dt>isDomainName</dt><dd>eseguito solo se <em>isUri</em> &egrave; fallito, controlla se &egrave; un nome di dominio;</dd>
+			<dt>isWorking</dt><dd>controlla che al valore corrisponda una pagina web effettivamente raggiungibile.</dd>
+		</dl>
+		<table>
+			<thead>
+				<tr>
+					<th>codice</th>
+					<th>scuola</th>
+					<th>sito web</th>
+					<th>isUri</th>
+					<th>isDomainName</th>
+					<th>isWorking</th>
+				</tr>
+			<thead>
+			<tbody>
+				<tr class="passed">
+					<td>CTAA00801T</td>
+					<td>CD DE AMICIS CATANIA / VIA ELEONORA D'ANGIO'</td>
+					<td>www.cddeamicisct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA00803X</td>
+					<td>CD DE AMICIS CATANIA / VIA MERLINO</td>
+					<td>www.cddeamicisct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE008013</td>
+					<td>CD DE AMICIS CATANIA / C.D.DE AMICIS-VIA E.D'ANGIO'</td>
+					<td>www.cddeamicisct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE008068</td>
+					<td>CD DE AMICIS CATANIA / VIA MERLINO</td>
+					<td>www.cddeamicisct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA01701L</td>
+					<td>CD M.RAPISARDI CATANIA / VIA AOSTA</td>
+					<td>www.cdmariorapisardi.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE01701T</td>
+					<td>CD M.RAPISARDI CATANIA / CD RAPISARDI CATANIA</td>
+					<td>www.cdmariorapisardi.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA022014</td>
+					<td>CD G. VERGA CATANIA / VIA G.LEOPARDI</td>
+					<td>wwwscuolavergacatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA022025</td>
+					<td>CD G. VERGA CATANIA / VIALE ALCIDE DE GASPERI</td>
+					<td>www.scuolavergacatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE022019</td>
+					<td>CD G. VERGA CATANIA / C.D.G.VERGA</td>
+					<td>wwwscuolavergacatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE02202A</td>
+					<td>CD G. VERGA CATANIA / VIALE A. DE GASPERI</td>
+					<td>wwwscuolavergacatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE028018</td>
+					<td>CONV. NAZ. CUTELLI CATANIA / C.D.ANNESSO CONV.CUTELLI</td>
+					<td>www.convittocutellict.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA86201D</td>
+					<td>IC PESTALOZZI CATANIA / VIALE NITTA</td>
+					<td>www.pestalozzi.cc</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA86202E</td>
+					<td>IC PESTALOZZI CATANIA / VILLAGGIO S.AGATA - ZONA B</td>
+					<td>www.pestalozzi.cc</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE86201P</td>
+					<td>IC PESTALOZZI CATANIA / IC PESTALOZZI CATANIA</td>
+					<td>www.pestalozzi.cc</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE86203R</td>
+					<td>IC PESTALOZZI CATANIA / VIALE NITTA</td>
+					<td>www.pestalozzi.cc</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM86201N</td>
+					<td>IC PESTALOZZI CATANIA / VILL. S. AGATA Z/A</td>
+					<td>www.pestalozzi.cc</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA863019</td>
+					<td>IC CAMPANELLA-STURZO CATANIA / PIANETA INFANZIA V.L CASTAGNOLA</td>
+					<td>www.iccampanellasturzo.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA86302A</td>
+					<td>IC CAMPANELLA-STURZO CATANIA / PIANETA INFANZIA V.LE BUMMACARO</td>
+					<td>www.iccampanellasturzo.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE86301E</td>
+					<td>IC CAMPANELLA-STURZO CATANIA / IC CAMPANELLA-STURZO CATANIA</td>
+					<td>www.iccampanellasturzo.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE86303L</td>
+					<td>IC CAMPANELLA-STURZO CATANIA / PLESSO VIALE BUMMACARO 4</td>
+					<td>www.iccampanellasturzo.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM86301D</td>
+					<td>IC CAMPANELLA-STURZO CATANIA / CAMPANELLA-STURZO</td>
+					<td>www.iccampanellasturzo.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA864015</td>
+					<td>IC DUSMET - DORIA CATANIA / PLESSO INFANZIA PIGNO</td>
+					<td>www.icdusmetdoria.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA864026</td>
+					<td>IC DUSMET - DORIA CATANIA / INFANZIA CASE SANTE E CONCORDIA</td>
+					<td>www.icdusmetdoria.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE86401A</td>
+					<td>IC DUSMET - DORIA CATANIA / PLESSO ELEMENTARE PIGNO</td>
+					<td>www.icdusmetdoria.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE86402B</td>
+					<td>IC DUSMET - DORIA CATANIA / PLESSO ELEMENTARE CONCORDIA</td>
+					<td>www.icdusmetdoria.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE86403C</td>
+					<td>IC DUSMET - DORIA CATANIA / PLESSO ELEMENTAR CASE SANTE</td>
+					<td>www.icdusmetdoria.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM864019</td>
+					<td>IC DUSMET - DORIA CATANIA / SECONDARIA DUSMET-DORIA</td>
+					<td>www.icdusmetdoria.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTMM86402A</td>
+					<td>IC DUSMET - DORIA CATANIA / OSPEDALE POLICLINICO - A. DORIA</td>
+					<td>www.icdusmetcatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTMM86403B</td>
+					<td>IC DUSMET - DORIA CATANIA / OSPEDALE VITT. EMANUELE</td>
+					<td>www.icdusmetcatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA86701L</td>
+					<td>I.C. FONTANAROSSA / I.C. FONTANAROSSA -CASTAGNOLA 1</td>
+					<td>www.icfontanarossa.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA86702N</td>
+					<td>I.C. FONTANAROSSA / I.C. FONTANAROSSA - MONCADA</td>
+					<td>www.icfontanarossa.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA86704Q</td>
+					<td>I.C. FONTANAROSSA / I.C. FONTANAROSSA - GORETTI</td>
+					<td>www.icfontanarossa.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA86706T</td>
+					<td>I.C. FONTANAROSSA / I.C. FONTANAROSSA - VACCARIZZO</td>
+					<td>www.icfontanarossa.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA86707V</td>
+					<td>I.C. FONTANAROSSA / FONTANAROSSA N MASSERIA MONCADA</td>
+					<td>WWW.ICFONTANAROSSA.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA86708X</td>
+					<td>I.C. FONTANAROSSA / I.C. FONTANAROSSA</td>
+					<td>Non Disponibile</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE86701T</td>
+					<td>I.C. FONTANAROSSA / I.C. FONTANAROSSA - GORETTI</td>
+					<td>www.icfontanarossa.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE867041</td>
+					<td>I.C. FONTANAROSSA / I.C. FONTANAROSSA - VACCARIZZO</td>
+					<td>www.icfontanarossa.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE867052</td>
+					<td>I.C. FONTANAROSSA / FONTANAROSSA N MASSERIA MONCADA</td>
+					<td>www.icfontanarossa.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE867074</td>
+					<td>I.C. FONTANAROSSA / I.C. FONTANAROSSA - MONCADA</td>
+					<td>www.icfontanarossa.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE867085</td>
+					<td>I.C. FONTANAROSSA / CASTAGNOLA 1</td>
+					<td>www.icfontanarossa.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM86701R</td>
+					<td>I.C. FONTANAROSSA / I.C. FONTANAROSSA</td>
+					<td>WWW.icfontanarossa.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA87501G</td>
+					<td>IC FRANCESCO PETRARCA - CATANIA / F. PETRARCA RIME SPARSE</td>
+					<td>www.istitutocomprensivopetrarca.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE87501R</td>
+					<td>IC FRANCESCO PETRARCA - CATANIA / I.C.F. PETRARCA""""SANTO GAGLIANO""""</td>
+					<td>www.istitutocomprensivopetrarca.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE87502T</td>
+					<td>IC FRANCESCO PETRARCA - CATANIA / F. PETRARCA IL CANZONIERE</td>
+					<td>www.istitutocomprensivopetrarca.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE87503V</td>
+					<td>IC FRANCESCO PETRARCA - CATANIA / VINCENZO PECORINO PATERNO'</td>
+					<td>www.istitutocomprensivopetrarca.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM87501Q</td>
+					<td>IC FRANCESCO PETRARCA - CATANIA / F. PETRARCA - LA CASA DI LAURA</td>
+					<td>www.istitutocomprensivopetrarca.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA880013</td>
+					<td>IC FELTRE - CATANIA / VIA DURANTE</td>
+					<td>www.icfeltre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA880035</td>
+					<td>IC FELTRE - CATANIA / VIA VIGO</td>
+					<td>www.icfeltre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA880046</td>
+					<td>IC FELTRE - CATANIA / VIA FONTANA</td>
+					<td>www.icfeltre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA880057</td>
+					<td>IC FELTRE - CATANIA / NUNZIATELLA</td>
+					<td>www.icfeltre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE880018</td>
+					<td>IC FELTRE - CATANIA / I.C. V.DA FELTRE</td>
+					<td>www.icfeltre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE880029</td>
+					<td>IC FELTRE - CATANIA / VIA FONTANA</td>
+					<td>www.icfeltre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE88003A</td>
+					<td>IC FELTRE - CATANIA / VIA RACCUGLIA</td>
+					<td>www.icfeltre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE88004B</td>
+					<td>IC FELTRE - CATANIA / NUNZIATELLA</td>
+					<td>www.icfeltre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM880017</td>
+					<td>IC FELTRE - CATANIA / VIA RACCUGLIA</td>
+					<td>www.icfeltre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA88101V</td>
+					<td>MUSCO / MUSCO</td>
+					<td>www.icmuscoct.info</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA88102X</td>
+					<td>MUSCO / MUSCO</td>
+					<td>www.icmuscoct.info</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA881031</td>
+					<td>MUSCO / MUSCO</td>
+					<td>www.icmuscoct.info</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE881025</td>
+					<td>MUSCO / MUSCO</td>
+					<td>www.icmuscoct.info</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE881036</td>
+					<td>MUSCO / MUSCO</td>
+					<td>www.icmuscoct.info</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE881047</td>
+					<td>MUSCO / MUSCO</td>
+					<td>www.icmuscoct.info</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTMM881013</td>
+					<td>MUSCO / MUSCO</td>
+					<td>www.icmuscoct.info</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA885016</td>
+					<td>IC G.PARINI - CATANIA / PLESSO """"ALBATROS""""</td>
+					<td>www.parinict.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA885027</td>
+					<td>IC G.PARINI - CATANIA / PLESSO """"LE GINESTRE""""</td>
+					<td>www.parinict.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE88501B</td>
+					<td>IC G.PARINI - CATANIA / PLESSO ALBATROS</td>
+					<td>www.parinict.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE88502C</td>
+					<td>IC G.PARINI - CATANIA / PLESSO LE GINESTRE</td>
+					<td>www.parinict.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE88503D</td>
+					<td>IC G.PARINI - CATANIA / PRIMARIA PLESSO PARINI</td>
+					<td>www.parinict.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM88501A</td>
+					<td>IC G.PARINI - CATANIA / G.PARINI - CATANIA</td>
+					<td>www.parinict.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA886023</td>
+					<td>IC V.BRANCATI - CATANIA / VIALE S. TEODORO""""</td>
+					<td>www.icbrancati.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA886045</td>
+					<td>IC V.BRANCATI - CATANIA / CRAVONE</td>
+					<td>www.icbrancati.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE886017</td>
+					<td>IC V.BRANCATI - CATANIA / CRAVONE</td>
+					<td>www.icbrancati.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE886028</td>
+					<td>IC V.BRANCATI - CATANIA / VIALE """"S. TEODORO""""</td>
+					<td>www.icbrancati.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE886039</td>
+					<td>IC V.BRANCATI - CATANIA / STRADALE CARDINALE</td>
+					<td>www.icbrancati.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTMM886016</td>
+					<td>IC V.BRANCATI - CATANIA / V.BRANCATI - CATANIA</td>
+					<td>www.icbrancati.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA88701T</td>
+					<td>IC F. DE ROBERTO - CATANIA / VIA PURGATORIO</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA88702V</td>
+					<td>IC F. DE ROBERTO - CATANIA / VIA MARTELLI</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA88703X</td>
+					<td>IC F. DE ROBERTO - CATANIA / SCUOLA MATPLESSO S M. CASTALDI</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA887041</td>
+					<td>IC F. DE ROBERTO - CATANIA / PLESSO VIA DELL'ATLETA</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA887052</td>
+					<td>IC F. DE ROBERTO - CATANIA / PLESSO VIA TORRESINO</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE887013</td>
+					<td>IC F. DE ROBERTO - CATANIA / PLESSO SEDE PRIMARIA</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE887035</td>
+					<td>IC F. DE ROBERTO - CATANIA / VIA SAPRI</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE887046</td>
+					<td>IC F. DE ROBERTO - CATANIA / PLESSO S. M. MARTELLI CASTALDI</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE887057</td>
+					<td>IC F. DE ROBERTO - CATANIA / PLESSO VIA MARATONA</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE887079</td>
+					<td>IC F. DE ROBERTO - CATANIA / VIA TORRESINO</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM887012</td>
+					<td>IC F. DE ROBERTO - CATANIA / F. DE ROBERTO - CATANIA</td>
+					<td>www.derobertoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA892019</td>
+					<td>IC XX SETTEMBRE CATANIA / VIA SIGNORELLI</td>
+					<td>www.icxxsettembre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89201E</td>
+					<td>IC XX SETTEMBRE CATANIA / XX SETTEMBRE</td>
+					<td>www.icxxsettembre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM89201D</td>
+					<td>IC XX SETTEMBRE CATANIA / XX SETTEMBRE""""</td>
+					<td>www.icxxsettembre.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA894011</td>
+					<td>IC MALERBA CATANIA / VIA PIDATELLA (EX P. PERGOLESI)</td>
+					<td>www.icmalerba.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA894022</td>
+					<td>IC MALERBA CATANIA / VIA ANFUSO</td>
+					<td>www.icmalerba.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA894044</td>
+					<td>IC MALERBA CATANIA / VIA DE CARO</td>
+					<td>www.icmalerba.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE894016</td>
+					<td>IC MALERBA CATANIA / C.D. MALERBA</td>
+					<td>www.icmalerba.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE894027</td>
+					<td>IC MALERBA CATANIA / VIA ANFUSO</td>
+					<td>www.icmalerba.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE894038</td>
+					<td>IC MALERBA CATANIA / CD CAPPONI CATANIA</td>
+					<td>www.icmalerba.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM894015</td>
+					<td>IC MALERBA CATANIA / SMS G. LEOPARDI CATANIA</td>
+					<td>www.icmalerba.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89601L</td>
+					<td>IC COPPOLA CATANIA / VIA MEDAGLIE D'ORO</td>
+					<td>www.scuolacoppola.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89603P</td>
+					<td>IC COPPOLA CATANIA / ACQUICELLA</td>
+					<td>www.scuolacoppola.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89605R</td>
+					<td>IC COPPOLA CATANIA / VIA ZAMMATARO</td>
+					<td>www.scuolacoppola.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89601T</td>
+					<td>IC COPPOLA CATANIA / C.D. COPPOLA-VIA MEDAGLIE D'ORO</td>
+					<td>www.scuolacoppola.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89602V</td>
+					<td>IC COPPOLA CATANIA / SC. PRIMARIA DE SANCTIS</td>
+					<td>www.scuolacoppola.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89603X</td>
+					<td>IC COPPOLA CATANIA / CD CARONDA CATANIA</td>
+					<td>www.scuolacoppola.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM89601R</td>
+					<td>IC COPPOLA CATANIA / S.M. COPPOLA</td>
+					<td>www.scuolacoppola.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89701C</td>
+					<td>ITALO CALVINO"""" / ITALO CALVINO""""LEUCATIA/FABIANI</td>
+					<td>www.icscalvino.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89702D</td>
+					<td>ITALO CALVINO"""" / ITALO CALVINO""""- QUARTARARO</td>
+					<td>www.icscalvino.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89704G</td>
+					<td>ITALO CALVINO"""" / ITALO CALVINO"""" - LEUCATIA</td>
+					<td>WWW.icscalvino.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89701N</td>
+					<td>ITALO CALVINO"""" / ITALO CALVINO"""" - BRINDISI</td>
+					<td>www.icscalvino.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89703Q</td>
+					<td>ITALO CALVINO"""" / ITALO CALVINO"""" - QUARTARARO</td>
+					<td>www.icscalvino.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89704R</td>
+					<td>ITALO CALVINO"""" / ITALO CALVINO"""" - LAURANA</td>
+					<td>www.icscalvino.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89705T</td>
+					<td>ITALO CALVINO"""" / ITALO CALVINO"""" - LEUCATIA</td>
+					<td>www.icscalvino.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM89701L</td>
+					<td>ITALO CALVINO"""" / ITALO CALVINO""""</td>
+					<td>www.icscalvino.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA898018</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / VIA MACALLE'</td>
+					<td>www.scuoladiazcatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA898029</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / VIA BASILE</td>
+					<td>www.scuoladiazcatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89803A</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / OSPEDALE GARIBALDI</td>
+					<td>www.scuoladiazcatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89804B</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / POLICLINICO UNIVERSITARIO</td>
+					<td>www.scuoladiazcatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89805C</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / OSPEDALE CANNIZZARO</td>
+					<td>www.scuoladiazcatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89806D</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / VIA SANTA MADDALENA N. 39</td>
+					<td>www.scuoladiazcatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA89807E</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / VIA PLEBISCITO N. 784</td>
+					<td>www.scuoladiazcatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89801D</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / I.C. DIAZ-MANZONI</td>
+					<td>www.scuoladiazcatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89802E</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / VIA SANTA MADDALENA N. 39</td>
+					<td>www.scuoladiazcatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89803G</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / VIA MACALLE'</td>
+					<td>www.scuoladiazcatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89804L</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / POLICLINICO UNIVERSITARIO</td>
+					<td>www.scuoladiazcatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89805N</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / OSPEDALE GARIBALDI</td>
+					<td>www.scuoladiazcatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE89806P</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / OSPEDALE CANNIZZARO</td>
+					<td>www.scuoladiazcatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM89801C</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / S.M. DIAZ - MANZONI</td>
+					<td>www.scuoladiazcatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM89802D</td>
+					<td>I.C. DIAZ - MANZONI CATANIA / OSPEDALE GARIBALDI (DIAZ-MANZ.)</td>
+					<td>www.scuoladiazcatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA899014</td>
+					<td>IC SAN GIORGIO - CATANIA / SAN GIORGIO</td>
+					<td>icsangiorgioct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA899025</td>
+					<td>IC SAN GIORGIO - CATANIA / I.C. SAN GIORGIO</td>
+					<td>icsangiorgioct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE899019</td>
+					<td>IC SAN GIORGIO - CATANIA / CD S. GIORGIO CATANIA</td>
+					<td>icsangiorgioct.com</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM899018</td>
+					<td>IC SAN GIORGIO - CATANIA / S.M. SAN GIORGIO</td>
+					<td>icsangiorgioct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8A601Q</td>
+					<td>GIUFFRIDA / SANTE GIUFFRIDA</td>
+					<td>www.scuolagiuffridact.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8A602R</td>
+					<td>GIUFFRIDA / SANTE GIUFFRIDA</td>
+					<td>www.scuolagiuffridact.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8A603T</td>
+					<td>GIUFFRIDA / SANTE GIUFFRIDA</td>
+					<td>www.scuolagiuffridact.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8A6011</td>
+					<td>GIUFFRIDA / SANTE GIUFFRIDA</td>
+					<td>www.scuolagiuffridact.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8A6022</td>
+					<td>GIUFFRIDA / SANTE GIUFFRIDA</td>
+					<td>www.scuolagiuffridact.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM8A601X</td>
+					<td>GIUFFRIDA / MARTOGLIO</td>
+					<td>www.scuolagiuffridact.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8A701G</td>
+					<td>C.B.CAVOUR - CATANIA / I.C. C.B. CAVOUR</td>
+					<td>www.scuolacavourcatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8A701R</td>
+					<td>C.B.CAVOUR - CATANIA / I.C. """"C.B. CAVOUR""""</td>
+					<td>www.scuolacavourcatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM8A701Q</td>
+					<td>C.B.CAVOUR - CATANIA / C.B.CAVOUR - CATANIA</td>
+					<td>www.scuolacavourcatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM8A702R</td>
+					<td>C.B.CAVOUR - CATANIA / OSPEDALE CANNIZZARO</td>
+					<td>www.icblandinipalagonia.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8A801B</td>
+					<td>I.C. SAURO - GIOVANNI XXIII / VIA LIOY</td>
+					<td>www.icsauro-giovannixxiii.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8A802C</td>
+					<td>I.C. SAURO - GIOVANNI XXIII / VIA TASSO3</td>
+					<td>www.icsauro-giovannixxiii.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8A801L</td>
+					<td>I.C. SAURO - GIOVANNI XXIII / VIA D. CHIESA 5</td>
+					<td>www.icsauro-giovannixxiii.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8A802N</td>
+					<td>I.C. SAURO - GIOVANNI XXIII / VIA T.TASSO 3</td>
+					<td>www.icsauro-giovannixxiii.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8A803P</td>
+					<td>I.C. SAURO - GIOVANNI XXIII / VIA T. TASSO1</td>
+					<td>www.icsauro-giovannixxiii.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM8A801G</td>
+					<td>I.C. SAURO - GIOVANNI XXIII / VIA TORQUATO TASSO 2</td>
+					<td>www.icsauro-giovannixxiii.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8A9017</td>
+					<td>I.C. PIZZIGONI- CARDUCCI / I.C. PIZZIGONI - CARDUCCI</td>
+					<td>www.icpizzigonicarducci.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8A901C</td>
+					<td>I.C. PIZZIGONI- CARDUCCI / I.C. PIZZIGONI - CARDUCCI</td>
+					<td>www.icpizzigonicarducci.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTMM8A901B</td>
+					<td>I.C. PIZZIGONI- CARDUCCI / I.C. PIZZIGONI - CARDUCCI</td>
+					<td>www.circolodidatticosaurocatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AB01C</td>
+					<td>IC CESARE BATTISTI CATANIA / VIA PLEBISCITO</td>
+					<td>www.battistix.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AB02D</td>
+					<td>IC CESARE BATTISTI CATANIA / VIA DELLA CONCORDIA</td>
+					<td>www.battistix.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AB03E</td>
+					<td>IC CESARE BATTISTI CATANIA / VIA SALETTE</td>
+					<td>www.battistix.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AB01N</td>
+					<td>IC CESARE BATTISTI CATANIA / CD BATTISTI CATANIA</td>
+					<td>www.battistix.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AB02P</td>
+					<td>IC CESARE BATTISTI CATANIA / VIA PLEBISCITO</td>
+					<td>www.battistix.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AB03Q</td>
+					<td>IC CESARE BATTISTI CATANIA / CONCORDIA</td>
+					<td>www.battistix.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM8AB01L</td>
+					<td>IC CESARE BATTISTI CATANIA / SM BATTISTI</td>
+					<td>www.battistix.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AC018</td>
+					<td>IC """"G. DELEDDA"""" CATANIA / PIAZZA MONTESSORI</td>
+					<td>www.scuoladeledda.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA8AC029</td>
+					<td>IC """"G. DELEDDA"""" CATANIA / OSPEDALE VITT. EMANUELE</td>
+					<td>WWW.XXSETTEMBRE.INFO</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AC01D</td>
+					<td>IC """"G. DELEDDA"""" CATANIA / C.D. DELEDDA</td>
+					<td>www.scuoladeledda.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AC02E</td>
+					<td>IC """"G. DELEDDA"""" CATANIA / OSPEDALE VITT. EMANUELE</td>
+					<td>www.gbnicolosi.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM8AC01C</td>
+					<td>IC """"G. DELEDDA"""" CATANIA / S.M. G.DELEDDA</td>
+					<td>www.scuoladeledda.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AD014</td>
+					<td>IC S.G. BOSCO CATANIA / S.G. BOSCO PLESSO VIA PALERMO</td>
+					<td>WWW.sgboscoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AD025</td>
+					<td>IC S.G. BOSCO CATANIA / S.G. BOSCO SEDE CENTRALE</td>
+					<td>www.sgboscoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE8AD019</td>
+					<td>IC S.G. BOSCO CATANIA / S.G. BOSCO - PLESSO VIA PALERMO</td>
+					<td>www.sgbosco.ct.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AD02A</td>
+					<td>IC S.G. BOSCO CATANIA / S.G. BOSCO - SEDE CENTRALE</td>
+					<td>www.sgboscoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM8AD018</td>
+					<td>IC S.G. BOSCO CATANIA / SM S.G. BOSCO</td>
+					<td>www.sgboscoct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AE01X</td>
+					<td>IC TEMPESTA CATANIA / VIA PLAIA</td>
+					<td>WWW.ICLIVIOTEMPESTA.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AE021</td>
+					<td>IC TEMPESTA CATANIA / VIA S.GIUSEPPE LA RENA</td>
+					<td>WWW.ICLIVIOTEMPESTA.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AE043</td>
+					<td>IC TEMPESTA CATANIA / VIA GRAMIGNANI</td>
+					<td>www.icliviotempesta.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AE015</td>
+					<td>IC TEMPESTA CATANIA / CD TEMPESTA CATANIA</td>
+					<td>WWW.ICLIVIOTEMPESTA.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AE026</td>
+					<td>IC TEMPESTA CATANIA / VIA PLAIA</td>
+					<td>WWW.ICLIVIOTEMPESTA.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AE037</td>
+					<td>IC TEMPESTA CATANIA / VIA S.G.LA RENA</td>
+					<td>WWW.ICLIVIOTEMPESTA.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM8AE014</td>
+					<td>IC TEMPESTA CATANIA / SM TEMPESTA</td>
+					<td>www.icliviotempesta.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA8AF01Q</td>
+					<td>IC M. MONTESSORI - P.MASCAGNI / IV NOVEMBRE</td>
+					<td>http//www.montessorimascagnict.gov.it/</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA8AF02R</td>
+					<td>IC M. MONTESSORI - P.MASCAGNI / MARIA MONTESSORI</td>
+					<td>http//www.montessorimascagnict.it</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA8AF03T</td>
+					<td>IC M. MONTESSORI - P.MASCAGNI / SCUOLA METRNA P. MASCAGNI</td>
+					<td>http//www.montessorimascagnict.it/</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE8AF011</td>
+					<td>IC M. MONTESSORI - P.MASCAGNI / BAINSIZZA</td>
+					<td>http//www.montessorimascagnict.gov.it/</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE8AF022</td>
+					<td>IC M. MONTESSORI - P.MASCAGNI / IV NOVEMBRE</td>
+					<td>http//www.montessorimascagnict.gov.it/</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE8AF033</td>
+					<td>IC M. MONTESSORI - P.MASCAGNI / VIA DI GREGORIO</td>
+					<td>http//www.montessorimascagnict.gov.it/</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTMM8AF01X</td>
+					<td>IC M. MONTESSORI - P.MASCAGNI / SM MONTESSORI- MASCAGNI</td>
+					<td>http//www.montessorimascagnict.gov.it/</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AG01G</td>
+					<td>I.C. P.S. DI GUARDO - QUASIMODO / SC.INFANZIA P.SANTO DI GUARDO</td>
+					<td>diguardoquasimodo.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AG01R</td>
+					<td>I.C. P.S. DI GUARDO - QUASIMODO / CD P.S.DI GUARDO -V S. MATTEO</td>
+					<td>diguardoquasimodo.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AG02T</td>
+					<td>I.C. P.S. DI GUARDO - QUASIMODO / CD P.S.DI GUARDO CATANIA</td>
+					<td>diguardoquasimodo.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM8AG01Q</td>
+					<td>I.C. P.S. DI GUARDO - QUASIMODO / SMS S.QUASIMODO - CATANIA</td>
+					<td>diguardoquasimodo.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AH01B</td>
+					<td>VESPUCCI - CAPUANA PIRANDELLO / VIA ETNEA 133</td>
+					<td>www.icvespucci.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTAA8AH02C</td>
+					<td>VESPUCCI - CAPUANA PIRANDELLO / VIA AUTERI</td>
+					<td>CT5IC8AH00E</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTAA8AH03D</td>
+					<td>VESPUCCI - CAPUANA PIRANDELLO / VIA MARCHESE DI CASALOTTO</td>
+					<td>www.icvespucci.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AH01L</td>
+					<td>VESPUCCI - CAPUANA PIRANDELLO / VIA MARCHESE DI CASALOTTO</td>
+					<td>www.icvespucci.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AH02N</td>
+					<td>VESPUCCI - CAPUANA PIRANDELLO / I.C. CAPUANA</td>
+					<td>www.ICVESPUCCI.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTEE8AH03P</td>
+					<td>VESPUCCI - CAPUANA PIRANDELLO / I.C. A. VESPUCCI - VIA AUTERI</td>
+					<td>www.icvespucci.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTMM8AH01G</td>
+					<td>VESPUCCI - CAPUANA PIRANDELLO / VESPUCCI - CAPUANA PIRANDELLO</td>
+					<td>www.icvespucci.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTRM00701B</td>
+					<td>I.S.I.S. D. ABRUZZI POLITECNICO DEL MARE / C. COLOMBO</td>
+					<td>www.POLITECNICODELMARE.GOV.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTRM00750Q</td>
+					<td>I.S.I.S. D. ABRUZZI POLITECNICO DEL MARE / SERALE IST PROF IND. E ATTIVITA' MARINAR</td>
+					<td>www.POLITECNICODELMARE.GOV.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTE007012</td>
+					<td>I.S.I.S. D. ABRUZZI POLITECNICO DEL MARE / AMMINISTRAZIONE FINANZA E MARKETING</td>
+					<td>www.politecnicodelmare.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTH007018</td>
+					<td>I.S.I.S. D. ABRUZZI POLITECNICO DEL MARE / DUCA DEGLI ABRUZZI</td>
+					<td>www.politecnicodelmare.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTH00750L</td>
+					<td>I.S.I.S. D. ABRUZZI POLITECNICO DEL MARE / SERALE IST.TEC NAUTICO ABRUZZI</td>
+					<td>www.politecnicodelmare.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTPS017019</td>
+					<td>IS G. B. VACCARINI / VACCARINI</td>
+					<td>www.vaccarinict.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTTF01701B</td>
+					<td>IS G. B. VACCARINI / VACCARINI</td>
+					<td>ww.vaccarinict.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTL01701G</td>
+					<td>IS G. B. VACCARINI / G. B. VACCARINI</td>
+					<td>www.vaccarinict.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTL017511</td>
+					<td>IS G. B. VACCARINI / G.B. VACCARINI - SERALE</td>
+					<td>WWW.VACCARINICT.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTD02301C</td>
+					<td>IS CARLO GEMMELLARO / GEMMELLARO - AMMINISTFIN. E MKT</td>
+					<td>www.iis-gemmellaro.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTF02301P</td>
+					<td>IS CARLO GEMMELLARO / GEMMELLARO - INFORMATICA</td>
+					<td>www.iis-gemmellaro.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTN02301A</td>
+					<td>IS CARLO GEMMELLARO / GEMMELLARO - TURISMO</td>
+					<td>www.iis-gemmellaro.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTRC03401G</td>
+					<td>I.S. DE FELICE GIUFFRIDA - OLIVETTI / IPSCT A. OLIVETTI</td>
+					<td>www.defeliceolivetti.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTD03401V</td>
+					<td>I.S. DE FELICE GIUFFRIDA - OLIVETTI / ITC DE FELICE GIUFFRIDA</td>
+					<td>www.defeliceolivetti.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTRA03801X</td>
+					<td>I.S. E.FERMI - EREDIA / P.DEODATO - PROF. ALBERGHIERO E AGRIC.</td>
+					<td>www.FERMIEREDIA.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTRI03801G</td>
+					<td>I.S. E.FERMI - EREDIA / IPSIA E.FERMI</td>
+					<td>www.FERMIEREDIA.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTA03801Q</td>
+					<td>I.S. E.FERMI - EREDIA / F. EREDIA</td>
+					<td>www.FERMIEREDIA.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTA038504</td>
+					<td>I.S. E.FERMI - EREDIA / F.EREDIA CORSO SERALE</td>
+					<td>www.FERMIEREDIA.IT</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTRF043014</td>
+					<td>ITI G.MARCONI / IPSS L. MANGANO</td>
+					<td>www.luciamanganoct.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTRF04350C</td>
+					<td>ITI G.MARCONI / ISTITUTO PROF.LE MANGANO CORSO SERALE</td>
+					<td>www.luciamanganoct.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTTF04301X</td>
+					<td>ITI G.MARCONI / ITI G.MARCONI</td>
+					<td>http//www.itimarconi.ct.it</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTTF043508</td>
+					<td>ITI G.MARCONI / CORSO SERALE ISTITUTO TECNICO INDUSTR.</td>
+					<td>http//www.itimarconi.ct.it</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTCT700006</td>
+					<td>CPIA CATANIA 1 / C.T. N. 1 (DISTR. 12 - I.C.PETRARCA CT)</td>
+					<td>Non Disponibile</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTCT701002</td>
+					<td>CPIA CATANIA 1 / C.T. N.4 (DISTR. 13-I.C. PESTALOZZI CT)</td>
+					<td>Non Disponibile</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTCT70200T</td>
+					<td>CPIA CATANIA 1 / C.T. N. 6 (DISTR. 14 - I.C. RECUPERO CT)</td>
+					<td>Non Disponibile</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTCT71000R</td>
+					<td>CPIA CATANIA 1 / C.T. N. 2 (DISTR. 12 IST. ALB. CT)</td>
+					<td>Non Disponibile</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTCT71200C</td>
+					<td>CPIA CATANIA 1 / C.T. N. 5 (DISTR. 13 -IC DIAZ-MANZONI)</td>
+					<td>Non Disponibile</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTCT713008</td>
+					<td>CPIA CATANIA 1 / C.T. N. 7 (DISTR. 14 - S.M. CAVOUR CT)</td>
+					<td>Non Disponibile</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE710015</td>
+					<td>CPIA CATANIA 1 / SCUOLA CARCERARIA</td>
+					<td>www.ipssar.org</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE710037</td>
+					<td>CPIA CATANIA 1 / BICOCCA</td>
+					<td>www.ipssar.org</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTEE710048</td>
+					<td>CPIA CATANIA 1 / CENTRO DI RIEDUCAZIONE MINORILE</td>
+					<td>www.ipssar.org</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTMM710014</td>
+					<td>CPIA CATANIA 1 / BICOCCA - ISTRUZIONE ADULTI</td>
+					<td>www.ipssar.org</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTMM71201Q</td>
+					<td>CPIA CATANIA 1 / MANZONI</td>
+					<td>www.iragazzidellamanzonicatania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="failed">
+					<td>CTMM71301G</td>
+					<td>CPIA CATANIA 1 / CAVOUR SEDE CARCERARIA</td>
+					<td>WWWSCUOLACAVOURCATANIA.COM</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>No</td>
+				</tr>
+				<tr class="passed">
+					<td>CTPS04001A</td>
+					<td>LS GALILEO GALILEI / L.S. GALILEI SEZ. OSPEDALIERA</td>
+					<td>www.liceoscientificogalilei.catania.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="failed">
+					<td>CTRH03005N</td>
+					<td>IPSSA I.P.S.S.A.R.""""KAROL WOJTYLA""""CATANIA / CASA CIRCONDARIALE DI CATANIA-BICOCCA</td>
+					<td>www. ipssar.eu</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="failed">
+					<td>CTRH03050T</td>
+					<td>IPSSA I.P.S.S.A.R.""""KAROL WOJTYLA""""CATANIA / ISTITUTO PROFESSIONALE """"KAROL WOJTILA""""</td>
+					<td>www. ipssar.eu</td>
+					<td>No</td>
+					<td>No</td>
+					<td></td>
+				</tr>
+				<tr class="passed">
+					<td>CTSL01050Q</td>
+					<td>LICEO ARTISTICO """" EMILIO GRECO"""" CATANIA / CATANIA</td>
+					<td>www.liceoartisticocatania.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTF010501</td>
+					<td>ISTITUTO TECNICO ARCHIMEDE / ISTITUTO TECNICO ARCHIMEDE</td>
+					<td>www.itisarchimede.com</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+				<tr class="passed">
+					<td>CTTF030517</td>
+					<td>ITI CANNIZZARO / CANNIZZARO</td>
+					<td>www.cannizzaroct.gov.it</td>
+					<td>No</td>
+					<td>Si</td>
+					<td>Si</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>Sommario</h2>
+		<ul>
+			<li>Totali 230</li>
+			<li>Non Disponibili 7</li>
+			<li>isUri 0</li>
+			<li>isDomainName 212</li>
+			<li>isWorking 182</li>
+		</ul>
+
+		<h2>Dati</h2>
+		<p>I dati si intendono rilasciati con licenza CC-BY-0.4 (attribuzione).</p>
+		<ul>
+			<li>Selezione delle <a href="schools-in-catania.ttl">scuole nel comune di catania</a> in formato RDF Turtle e con IRI Skolemizzate.</li>
+			<li><a href="websitetest.owl">Risultati dei test</a> in formato RDF/XML (vocabolario EARL).</li>
+		</ul>
+	</body>
+</html>
+
