@@ -1,0 +1,15 @@
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}		
+
+*.passed{
+	background-color : #00ff00;
+}
+
+*.failed{
+	background-color : #ff0000;
+}

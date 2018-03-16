@@ -1,0 +1,19 @@
+PREFIX miur: <http://www.miur.it/ns/miur#>
+PREFIX earl: <http://www.w3.org/ns/earl#>
+PREFIX test:<http://opendatahacklab.org/albopop/schools/websitetest.owl/>
+
+SELECT DISTINCT ?school ?description ?parentdescription ?website ?testcase WHERE {
+	?school miur:DENOMINAZIONESCUOLA ?description .
+	?school miur:DENOMINAZIONEISTITUTORIFERIMENTO ?parentdescription .
+	?school miur:SITOWEBSCUOLA ?website .
+	?test earl:subject ?school .
+	?test earl:test ?testcase .
+	?test earl:result ?result .
+	?result earl:outcome earl:passed
+	{
+	 	{ ?test earl:test test:isworkinguri }
+		 UNION 			 
+		{ ?test earl:test test:isworkingdomainname }
+	}
+} ORDER BY ?website
+ 

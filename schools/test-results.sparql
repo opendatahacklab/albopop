@@ -2,7 +2,7 @@ PREFIX miur: <http://www.miur.it/ns/miur#>
 PREFIX earl: <http://www.w3.org/ns/earl#>
 PREFIX test:<http://opendatahacklab.org/albopop/schools/websitetest.owl/>
 
-SELECT DISTINCT ?code ?description ?parentcode ?parentdescription ?website ?isuri ?isdomainname ?isworkinguri ?isworkingdomainname WHERE {
+SELECT DISTINCT ?school ?code ?description ?parentcode ?parentdescription ?website ?isuri ?isdomainname ?isworkinguri ?isworkingdomainname WHERE {
 	?school miur:CODICESCUOLA ?code .
 	?school miur:DENOMINAZIONESCUOLA ?description .
 	?school miur:CODICEISTITUTORIFERIMENTO ?parentcode .

@@ -21,28 +21,12 @@
  */
 
 require_once('config.php');
-require_once(PHPRDFGenerationToolsPATH.'RDFXMLEARL.php');
+require_once('reportUtils.php');
 
 ?>
 <html>
 	<head>
-		<style>
-table {
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid black;
-}		
-
-*.passed{
-	background-color : #00ff00;
-}
-
-*.failed{
-	background-color : #ff0000;
-}
-		</style>	
+		<link rel="stylesheet" type="text/css" href="report.css"/>
 	</head>
 	<body>
 		<h1>Test sul Dataset delle Scuole Statali</h1>
@@ -68,35 +52,6 @@ table, th, td {
 			<tbody>
 <?php
 
-/**
-  * Convert an EARL outcome to $passedstr if the outcome is earl:passed and to $failedstr if the outcome is earl:failed. Otherwise, return an empty string.
- */
-function getOutcomeString($outcomeuri, $passedstr, $failedstr){
-	if (strcmp(RDFXMLEARLTestResult::$PASSED_OUTCOME_IRI,$outcomeuri)==0)
-		return $passedstr;
-	if (strcmp(RDFXMLEARLTestResult::$FAILED_OUTCOME_IRI,$outcomeuri)==0)
-		return $failedstr;
-	return '';
-}
-
-function getIsWorkingString($isuri, $isdomainname, $isworkinguri, $isworkingdomainname,$passedstr, $failedstr){
-	if (strcmp($passedstr,$isuri)===0)
-		return strcmp($passedstr,$isworkinguri)===0 ? $passedstr : $failedstr;
-	else if (strcmp($passedstr,$isdomainname)===0)
-		return strcmp($passedstr,$isworkingdomainname)===0 ? $passedstr : $failedstr;
-	else return '';
-}
-
-function isOk($website, $isuri, $isdomainname, $isworking ,$passedstr, $failedstr){
-	if (strcmp('Non Disponibile', $website)===0)
-		return false;
-	if (strcmp($isuri,$failedstr)===0 && strcmp($isdomainname,$failedstr)===0)
-		return false;
-	if (strcmp($isworking,$failedstr)===0)
-		return false;
-	return true;
-}
-
 $f = fopen( 'php://stdin', 'r' );
 $err = fopen( 'php://stderr', 'w+' );
 //skip header
@@ -114,15 +69,15 @@ $failedstr='No';
 //parse rows
 while(($row = fgetcsv($f, 1000, ",")) !== FALSE)
 	//here we ignore blank nodes
-	if ($row[0]!==null && strcmp($row[0], $row[2])) {
-		$code=$row[0]; 
-		$description="$row[3] / $row[1]";
-		$parentcode=$row[2];
-		$website=$row[4];
-		$isuri=getOutcomeString($row[5],$passedstr,$failedstr);
-		$isdomainname=getOutcomeString($row[6],$passedstr,$failedstr);
-		$isworkinguri=getOutcomeString($row[7],$passedstr,$failedstr);
-		$isworkingdomainname=getOutcomeString($row[8],$passedstr,$failedstr);
+	if ($row[0]!==null && strcmp($row[1], $row[3])) {
+		$code=$row[1]; 
+		$description="$row[4] / $row[2]";
+		$parentcode=$row[3];
+		$website=$row[5];
+		$isuri=getOutcomeString($row[6],$passedstr,$failedstr);
+		$isdomainname=getOutcomeString($row[7],$passedstr,$failedstr);
+		$isworkinguri=getOutcomeString($row[8],$passedstr,$failedstr);
+		$isworkingdomainname=getOutcomeString($row[9],$passedstr,$failedstr);
 		$isworking=getIsWorkingString($isuri, $isdomainname, $isworkinguri, $isworkingdomainname,$passedstr, $failedstr);
 		$cssclass=isOk($website, $isuri, $isdomainname, $isworking ,$passedstr, $failedstr) ? 'passed' : 'failed';
 

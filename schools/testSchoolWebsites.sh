@@ -18,6 +18,7 @@ java  -Xms2G -Xmx2G -jar semanticoctopus-0.2.2-jar-with-dependencies.jar -q file
 php webSiteTest.php >$dirName/websitetest.owl
 
 echo generating report
+cp report.css $dirName/report.css
 cat test-results.sparql | \
 java -jar semanticoctopus-0.2.2-jar-with-dependencies.jar -q file://$dirPath/schools-in-catania-sk.ttl file://$dirPath/websitetest.owl | \
 php report.php >$dirName/websitetestreport.html
