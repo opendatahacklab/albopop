@@ -65,7 +65,7 @@ function isWorkingURICheck($url){
 	return TRUE;
 }
 $isWorkingURITestCase=new RDFXMLEARLTestCase($ontology, $ns.'isworkinguri');
-$isWorkingURIChecker=new SchoolWebsiteCheck($ontology, $isWorkingURLTestCase->iri, $ns.'isisworkinguri/', 'isWorkingURICheck');
+$isWorkingURIChecker=new SchoolWebsiteCheck($ontology, $isWorkingURITestCase->iri, $ns.'isisworkinguri/', 'isWorkingURICheck');
 
 /**
  * Same as isWorkingURICheck but just prepend the http schema to the domain name before check

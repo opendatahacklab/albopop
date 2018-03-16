@@ -57,12 +57,11 @@ function convertToNtriples($string, $ns){
 	$string=expandPrefix($string);
 	if (isURI($string))
 		return "<$string>";
-	//replace blank nodes with skolem IRI
-	if (preg_match('#^(_|(-)?[a-z0-9]*):(-)?[a-z0-9]*:(-)?[a-z0-9]*$#', $string)){
-		$encoded=urlencode($string);
-		return '<'.$ns.'.well-known/bnode/'.$encoded.'>';
 
-	}
+	//blank nodes remains unchanged
+	if (preg_match('#^_:.*#', $string))
+		return $string;
+
 	$string=str_replace("\n",'',
 			str_replace("\r",'', 
 			str_replace('"',"\\\"", $string)));
