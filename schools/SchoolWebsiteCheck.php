@@ -34,7 +34,7 @@ class SchoolWebsiteCheck{
 	} 
 
 	/**
-	 * Create an ontology for tests  with a single test case
+	 * Create an ontology for tests
 	 *
 	 */
 	public static function getOntology($ontologyiri, $ns){

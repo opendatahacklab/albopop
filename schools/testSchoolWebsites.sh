@@ -23,6 +23,11 @@ cat test-results.sparql | \
 java -jar semanticoctopus-0.2.2-jar-with-dependencies.jar -q file://$dirPath/schools-in-catania-sk.ttl file://$dirPath/websitetest.owl | \
 php report.php >$dirName/websitetestreport.html
 
+echo generate isCorrect reporting csv
+cat school-working-websites.sparql | \
+java -jar semanticoctopus-0.2.2-jar-with-dependencies.jar -q file://$dirPath/schools-in-catania-sk.ttl file://$dirPath/websitetest.owl | \
+php isCorrectEmptyCSVReport.php >$dirName/iscorrect.csv
+
 #echo getting iris
 #cat isUri.sparql | \
 #java  -Xms2G -Xmx2G -jar semanticoctopus-0.2.2-jar-with-dependencies.jar -q file://$dirPath/SCUANAGRAFESTAT20171820170901.rdf file://$dirPath/mapping.owl file://$dirPath/syntaxTest.owl >$dirName/isUri.csv

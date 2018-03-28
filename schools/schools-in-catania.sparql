@@ -1,7 +1,7 @@
 PREFIX miur: <http://www.miur.it/ns/miur#>
 
 SELECT ?school ?p ?o  WHERE {
-	?school miur:CODICECOMUNESCUOLA 'C351' .
-	?school ?p ?o
-}
+	?school miur:CODICECOMUNESCUOLA 'C351'.
+	?school ?p ?o 
+} OFFSET 1
  

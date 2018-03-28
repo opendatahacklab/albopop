@@ -22,7 +22,6 @@
  */
 require_once('config.php');
 
-$err=fopen( 'php://stderr', 'w+' );
  
 /**
  * Read  a sparql query from standard input
@@ -36,11 +35,38 @@ function readQueryFromStdIn(){
 }
 
 /**
- * Perform a sparql query
+ * Perform a multiple queries using LIMIT and OFFSET  to get chunks of specified size for each query. Send output to the specified handle
+ *
+ * @return
+*/
+function performChunkedQuery($endpoint, $query,$limit){
+	$handle=fopen('php://stdout','w+');
+	performQueryChunk($endpoint, $query,$limit,$handle,0);
+	fflush($handle);
+}
+
+/**
+ * Perform a multiple queries using LIMIT and OFFSET  to get chunks of specified size for each query. Send output to the specified handle
+ *
+ * @return
+*/
+function performQueryChunk($endpoint, $query,$limit,$handle,$offset){
+	$ret=performQuery($endpoint,$query." LIMIT $limit OFFSET $offset");
+	if ($ret!==FALSE){
+		echo "--------- size ".sizeof($ret);
+		fwrite($handle,$ret);
+		performQueryChunk($endpoint, $query,$limit,$handle,$offset+$limit);
+	}
+}
+
+/**
+ * Perform a sparql query, write the output on stdout
  * 
  * @return string containing a csv 
  */
 function performQuery($endpoint, $query){
+	$err=fopen( 'php://stderr', 'w+' );
+	echo "$query\n";
 	$url = $endpoint.'?query='.urlencode( $query ).'&dataType=csv';
 	$ch = curl_init($url);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -71,6 +97,7 @@ function performQuery($endpoint, $query){
 
 //$db=setupConnection();
 $query = readQueryFromStdIn();
+//$result = performChunkedQuery('http://dati.istruzione.it/opendata/SCUANAGRAFESTAT/query', $query,50);
 $result = performQuery('http://dati.istruzione.it/opendata/SCUANAGRAFESTAT/query', $query);
 if ($result!==FALSE) echo $result;
 ?>
