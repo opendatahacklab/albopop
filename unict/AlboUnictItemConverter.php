@@ -30,7 +30,7 @@ class AlboUnictItemConverter implements AlboToRSSItemConverter {
 		$rssItem->title=$alboUnictItem->description;
 		$rssItem->description="Avviso ".$alboUnictItem->numero.".".$alboUnictItem->richiedente.": ".$alboUnictItem->description;
 		$rssItem->pubDate=$alboUnictItem->inizio_pubblicazione;
-		$rssItem->link="http://dev.opendatasicilia.it/albopop/unict/sharer.php?number=$alboUnictItem->numero";
+		$rssItem->link="http://opendatahacklab.org/albopop/unict/sharer.php?number=$alboUnictItem->numero";
 		$rssItem->guid=$rssItem->link;
 		return $rssItem;
 	}
