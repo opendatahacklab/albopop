@@ -30,7 +30,7 @@ if (isset($ente)){
 	$motivation="Supporto per opendatahacklab e Albo POP $ente";
 } else { 
 	$donationTxt="SOSTIENI QUESTO ALBO POP CON UNA DONAZIONE AD HACKSPACE CATANIA";
-	$motivation="Supporto per opnedatahacklab";
+	$motivation="Supporto per opendatahacklab";
 }
 ?>
 <!DOCTYPE html>
@@ -78,15 +78,6 @@ function sharefb(){
 		<h1>
 			<?php echo $title;?>
 		</h1>
-		<form class="donation" action="https://www.paypal.com/cgi-bin/webscr"
-			method="post" target="_top">
-				<input type="hidden" name="cmd" value="_s-xclick" /> <input
-				type="hidden" name="hosted_button_id" value="CXAF33S5R9QZE" /> 
-				<input type="hidden" name="item_name" value="<?php echo $motivation; ?>" />
-				<input class="donation" type="submit" name="sumbit"
-				value="<?php echo $donationTxt; ?>"/>
-			</label>
-		</form>
 	</header>
 	<?php
 	
@@ -119,8 +110,7 @@ if (isset ( $news ))
 	<section id="credits">
 		<h2>Crediti</h2>
 		<p>
-			Questo albo pop &egrave; stato realizzato da <a
-				href="http://hackspacecatania.it" target="_blank">Hackspace Catania</a>
+			Questo albo pop &egrave; stato realizzato 
 			nell'ambito del progetto <a href="http://opendatahacklab.org"
 				target="_blank"><code>opendatahacklab</code> </a>
 <?php
@@ -129,9 +119,6 @@ if (isset ( $supporter_name ))
 	echo " col supporto di <em>$supporter_name</em>"?>
 		.</p>
 		<p class="links">
-			<a href="http://hackspacecatania.it/" target="_blank"> <img
-				src="http://hackspacecatania.it/wp-content/uploads/2014/04/logo-hackspace-learn1.png"
-				alt="LEARN MAKE HACK SHARE. Hackspace Catania" />
 			</a> <a href="http://opendatahacklab.org" target="_blank"> <img
 				src="http://opendatahacklab.org/commons/imgs/logo_cog4_ter.png"
 				alt="logo opendatahacklab" />
