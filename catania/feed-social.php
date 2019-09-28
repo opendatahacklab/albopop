@@ -23,12 +23,12 @@ require("AlboComuneCTParser.php");
 require("../RSS/RSSFeedGenerator.php");
 require("../RSS/RSSFeedItem.php");
 require("../phpalbogenerator/AccessLogUtils.php");
-define ("RSSPATH","http://www.opendatahacklab.org/albopop/catania/");
+define ("RSSPATH","https://www.opendatahacklab.org/albopop/catania/");
 AccessLogUtils::logAccess();
 
 $parser = AlboComuneCTParser::createByDate();
 $feed=new RSSFeedGenerator("Albo del Comune di Catania", "Versione POP e social dell'Albo Pretorio del Comune di Catania", 
-		"http://www.comune.catania.gov.it/EtnaInWeb/AlboPretorio.nsf/HomePage?Open&buffer=A20110301121017437GH",RSSPATH."alboct2RSS-social.php");
+		"http://www.comune.catania.gov.it/EtnaInWeb/AlboPretorio.nsf/HomePage?Open&buffer=A20110301121017437GH",RSSPATH."feed-social.php");
 foreach($parser as $r){
 	//remove the sender if it is internal to the municipality of Catania
 	$title=preg_replace('%^.*- COMUNE DI CATANIA *%', '',$r->mittente_descrizione,1);

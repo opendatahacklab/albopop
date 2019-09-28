@@ -26,5 +26,5 @@ require ('AlboUnictItemConverter.php');
 $generator = new AlboPopGenerator ( new AlboUnictParserFactory (), new AlboUnictItemConverter () );
 $generator->outputFeed ("Albo dell'Universita` di Catania",
 		"Versione POP dell'Albo Ufficiale di Ateneo dell'Università degli Studi di Catania",
-		'http://opendatahacklab.org/albopop/unict/');
+		'https://www.opendatahacklab.org/albopop/unict/unict2RSS.php');
 ?>

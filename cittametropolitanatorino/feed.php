@@ -24,5 +24,5 @@ error_reporting(E_ERROR | E_PARSE);
 
 
 $generator = new AlboPopGenerator ( new AlboCittaMetroTorinoParserFactory (), new AlboCittaMetroTorinoItemConverter () );
-$generator->outputFeed ( "Albo POP della Città Metropolitana di Torino", "Versione POP della Città Metropolitana di Torino", "http://www.opendatahacklab.org/albopop/cittametropolitanatorino/feed.php" );
+$generator->outputFeed ( "Albo POP della Città Metropolitana di Torino", "Versione POP della Città Metropolitana di Torino", "https://www.opendatahacklab.org/albopop/cittametropolitanatorino/feed.php" );
 ?>

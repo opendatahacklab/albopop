@@ -24,5 +24,5 @@ require ('AlboTorinoItemConverter.php');
 error_reporting(E_ERROR | E_PARSE);
 
 $generator = new AlboPopGenerator ( new AlboTorinoParserFactory (), new AlboTorinoItemConverter () );
-$generator->outputFeed ( "Albo POP del Comune di Torino", "Versione POP dell'Albo Pretorio del Comune di Torino", "http://www.opendatahacklab.org/albopop/torino/feed.php" );
+$generator->outputFeed ( "Albo POP del Comune di Torino", "Versione POP dell'Albo Pretorio del Comune di Torino", "https://www.opendatahacklab.org/albopop/torino/feed.php" );
 ?>

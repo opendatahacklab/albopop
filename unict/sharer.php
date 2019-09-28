@@ -20,7 +20,7 @@
 
 require("AlboUnictParserFactory.php");
 require("../phpalbogenerator/AccessLogUtils.php");
-define ("RSSPATH","http://dev.opendatasicilia.it/albopop/catania/");
+define ("RSSPATH","https://www.opendatahacklab.org/albopop/unict/");
 AccessLogUtils::logAccess("accessNotices.log");
 
 $number=$_GET['number'];

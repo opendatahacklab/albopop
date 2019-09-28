@@ -30,7 +30,7 @@ define('ALBO_URL','https://trasparenza.cittametropolitana.ct.it/web/citta-metrop
 define('SELECTION_FORM_URL','https://trasparenza.cittametropolitana.ct.it/web/citta-metropolitana-di-catania/albo-pretorio?p_auth=qTV0abq9&p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_pos=1&p_p_col_count=3&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=eseguiFiltro');
 
 $generator = new AlboPopGenerator ( new AlbojCityGovParserFactory (ALBO_URL, SELECTION_FORM_URL, new AlboCittaMetropolitanaCataniaEntryParser()), 
-		new AlbojCityGovItemConverter ("http://www.opendatahacklab.org/albopop/cittametropolitanacatania/sharer.php") );
+		new AlbojCityGovItemConverter ("https://www.opendatahacklab.org/albopop/cittametropolitanacatania/sharer.php") );
 $generator->outputFeed ("Albo POP della Città Metropolitana di Catania", "Versione POP dell'Albo Pretorio della Città Metropolitana di Catania", 
-		"http://www.opendatahacklab.org/albopop/cittametropolitanacatania/feed.php");
+		"https://www.opendatahacklab.org/albopop/cittametropolitanacatania/feed.php");
 ?>
