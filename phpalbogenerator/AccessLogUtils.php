@@ -22,7 +22,7 @@
 
 class AccessLogUtils{
 
-	public static function logAccess($filename="access.log"){
+	public static function logAccess($filename='access.log', $uri=''){
 		//ACCESS COUNTER
 		if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 			$ip = $_SERVER['HTTP_CLIENT_IP'];

@@ -32,5 +32,5 @@ error_reporting(E_ERROR | E_PARSE);
 $generator = new AlboPopGenerator ( new AlbojCityGovParserFactory (ALBO_URL, SELECTION_FORM_URL, new AlboBelpassoEntryParser() ), 
 		new AlbojCityGovItemConverter ("http://www.opendatahacklab.org/albopop/belpasso/sharer.php"));
 $generator->outputFeed ("Albo POP del Comune di Belpasso", "Versione POP dell'Albo Pretorio del Comune di Belpasso", 
-		"http://www.opendatahacklab.org/albopop/belpasso/albofeed.php");
+		"https://www.opendatahacklab.org/albopop/belpasso/feed.php");
 ?>

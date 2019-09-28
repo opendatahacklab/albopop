@@ -65,7 +65,7 @@ class AlboPopGenerator {
 		 * (il server deve avere il locale italiano installato
 		 */
 		setlocale ( LC_TIME, 'it_IT' );
-		AccessLogUtils::logAccess();
+		AccessLogUtils::logAccess('access.log',$url);
 		echo $feed->getFeed ();
 	}	
 }

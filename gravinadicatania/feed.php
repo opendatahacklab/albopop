@@ -1,8 +1,8 @@
 <?php 
 /**
- * This script turn the html page of the official 'Albo' of the University
- * of Catania into a rss feed.
- *
+ * This script produce the rss feed from the web page of the albo of the municipality of
+ * Gravina di Catania.
+ * 
  * Copyright 2016 Cristiano Longo
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,13 +18,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+require ('constants.php');
 require ('../phpalbogenerator/AlboPopGenerator.php');
-require ('AlboUnictParserFactory.php');
-require ('AlboUnictItemConverter.php');
+require ('../jCityGov/AlbojCityGovParserFactory.php');
+require ('AlboGravinaDiCataniaItemConverter.php');
+require('AlboGravinaDiCataniaEntryParser.php');
 
-$generator = new AlboPopGenerator ( new AlboUnictParserFactory (), new AlboUnictItemConverter () );
-$generator->outputFeed ("Albo dell'Universita` di Catania",
-		"Versione POP dell'Albo Ufficiale di Ateneo dell'Università degli Studi di Catania",
-		'http://opendatahacklab.org/albopop/unict/');
+error_reporting(E_ERROR | E_PARSE);
+
+$itemConverter=new AlboGravinaDiCataniaItemConverter();
+$generator = new AlboPopGenerator ( new AlbojCityGovParserFactory (ALBO_URL, SELECTION_FORM_URL, new AlboGravinaDiCataniaEntryParser()), 
+		$itemConverter );
+$generator->outputFeed ("Albo POP del Comune di Gravina di Catania", "Versione POP dell'Albo Pretorio del Comune di Gravina di Catania", 
+		"https://www.opendatahacklab.org/albopop/gravinadicatania/feed.php");
 ?>
