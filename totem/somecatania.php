@@ -22,11 +22,19 @@
 //define ("RSSPATH","http://dev.opendatasicilia.it/albopop/catania/");
 
 $feeds=array(
-	"http://dev.opendatasicilia.it/albopop/unict/unict2RSS.php",
-	"http://dev.opendatasicilia.it/albopop/catania/alboct2RSS.php",
-	"http://dev.opendatasicilia.it/albopop/cittametropolitanacatania/albofeed.php");
+	"http://localhost/~cristianolongo/opendatahacklab/albopop/unict/unict2RSS.php",
+	"http://localhost/~cristianolongo/opendatahacklab/albopop/catania/feed.php",
+	"http://localhost/~cristianolongo/opendatahacklab/albopop/cittametropolitanacatania/feed.php",
+	"http://localhost/~cristianolongo/opendatahacklab/albopop/scuolagbvaccarinict/feed.php",
+	"http://localhost/~cristianolongo/opendatahacklab/albopop/parcodelletna/feed.php");
 
-//choose a feed random
+
+//$feeds=array(
+//	"http://dev.opendatasicilia.it/albopop/unict/unict2RSS.php",
+//	"http://dev.opendatasicilia.it/albopop/catania/alboct2RSS.php",
+//	"http://dev.opendatasicilia.it/albopop/cittametropolitanacatania/albofeed.php");
+
+//choose a feed randomly
 $selectedFeedNumber = rand ( 0, count($feeds)-0.1 );
 	
 $feedUrl=$feeds[$selectedFeedNumber];

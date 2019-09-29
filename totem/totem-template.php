@@ -73,14 +73,6 @@ $entry = getRandomFeedEntry ( $feedUrl );
 		<h1>
 			<?php echo $feed->title;?>
 		</h1>
-		<form class="donation" action="https://www.paypal.com/cgi-bin/webscr"
-			method="post" target="_top">
-			<input type="hidden" name="cmd" value="_s-xclick" /> <input
-				type="hidden" name="hosted_button_id" value="CXAF33S5R9QZE" /> <input
-				type="hidden" name="item_name" value="<?php echo $motivation; ?>" />
-			<input class="donation" type="submit" name="sumbit"
-				value="<?php echo $donationTxt; ?>" /> </label>
-		</form>
 	</header>
 	<?php
 	
@@ -96,22 +88,19 @@ $entry = getRandomFeedEntry ( $feedUrl );
 	</section>
 
 	<section id="credits">
+		<img
+				src="http://opendatahacklab.org/commons/imgs/logo_cog4_ter.png"
+				alt="logo opendatahacklab" />
 		<p>
 			Per saperne di pi&ugrave visita il sito
-			<code>albopop.it</code>
-			o vieni a trovarci in via Grotte Bianche 112 a Catania.
-			Questo albo pop &egrave; stato realizzato da <a
-				href="http://hackspacecatania.it" target="_blank">Hackspace Catania</a>
+			<code>albopop.it</code>.
+
+			Questo albo pop &egrave; stato realizzato 
 			nell'ambito del progetto <a href="http://opendatahacklab.org"
 				target="_blank"><code>opendatahacklab</code> </a>
 		</p>
 		<p class="links">
-			<a href="http://hackspacecatania.it/" target="_blank"> <img
-				src="http://hackspacecatania.it/wp-content/uploads/2014/04/logo-hackspace-learn1.png"
-				alt="LEARN MAKE HACK SHARE. Hackspace Catania" />
-			</a> <a href="http://opendatahacklab.org" target="_blank"> <img
-				src="http://opendatahacklab.org/commons/imgs/logo_cog4_ter.png"
-				alt="logo opendatahacklab" />
+			 <a href="http://opendatahacklab.org" target="_blank"> 
 			</a>
 		</p>
 	</section>
