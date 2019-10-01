@@ -58,6 +58,8 @@ class AlboPopGenerator {
 				$feed->addItemObject ( $item );
 		}
 		// output
+		error_reporting(E_ERROR | E_PARSE);
+
 		header ( 'Content-type: application/rss+xml; charset=UTF-8' );
 		header ('Access-Control-Allow-Origin: *');
 		/*

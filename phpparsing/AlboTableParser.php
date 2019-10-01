@@ -25,10 +25,6 @@
 require ('TableParser.php');
 
 class AlboTableParser extends TableParser{
-	private $rowParser;
-	private $rows;
-	private $index;
-	
 	
 	/**
 	 * Retrieve elements from the given page according to the specified row-parser.
@@ -46,10 +42,9 @@ class AlboTableParser extends TableParser{
 	 */
 	public static function getTableElement($htmlPage){
 		$tables=$htmlPage->getElementsByTagName("table");
-		if ($tables->length<1){
-			$this->rows=new DOMNodeList();
-			$this->index=-1;
-		}
+		//return an empty table
+		if ($tables->length<1)
+			return new DOMElement('table');
 		else if ($tables->length>1)
 			throw new Exception("Multiple table elements found");
 		else
