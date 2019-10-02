@@ -1,7 +1,6 @@
-<?php
+<?php 
 /**
- * Generate the feed of Albo POP of the University of Torino
- * 
+ * An entry in the bullettin board of the Municipality of Belpasso
  * Copyright 2016 Cristiano Longo
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,13 +15,18 @@
  *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author Cristiano Longo
+ * 
  */
-require ('../phpalbogenerator/AlboPopGenerator.php');
-require ('AlboUnitoParserFactory.php');
-require ('AlboUnitoItemForSharerConverter.php');
-
-error_reporting(E_ERROR | E_PARSE);
-
-$generator = new AlboPopGenerator ( new AlboUnitoParserFactory (), new AlboUnitoItemConverter ( "https://www.opendatahacklab.org/albopop/unito/sharer.php" ) );
-$generator->outputFeed ( "Albo POP del Universita` di Torino", "Versione POP dell'Albo Ufficiale dell'Universita` di Torino", "https://www.opendatahacklab.org/albopop/unito/feed.php" );
+class AlbojCityGovEntry{
+	var $anno_registro;
+	var $numero_registro;
+	var $tipo_atto;
+	var $sottotipo_atto;
+	var $oggetto;
+	var $data_inizio_pubblicazione;
+	var $data_fine_pubblicazione;
+	var $url;
+}
 ?>

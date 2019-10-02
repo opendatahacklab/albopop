@@ -1,6 +1,7 @@
-<?php
+<?php 
 /**
- * Generate the feed of Albo POP of the University of Torino
+ * Parse an entry in the bullettin board of the albo. Customize this class depending
+ * on the albo structure.
  * 
  * Copyright 2016 Cristiano Longo
  *
@@ -16,13 +17,15 @@
  *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author Cristiano Longo
+ * 
  */
-require ('../phpalbogenerator/AlboPopGenerator.php');
-require ('AlboUnitoParserFactory.php');
-require ('AlboUnitoItemForSharerConverter.php');
-
-error_reporting(E_ERROR | E_PARSE);
-
-$generator = new AlboPopGenerator ( new AlboUnitoParserFactory (), new AlboUnitoItemConverter ( "https://www.opendatahacklab.org/albopop/unito/sharer.php" ) );
-$generator->outputFeed ( "Albo POP del Universita` di Torino", "Versione POP dell'Albo Ufficiale dell'Universita` di Torino", "https://www.opendatahacklab.org/albopop/unito/feed.php" );
+interface AlbojCityGovEntryParser{
+	
+	/**
+	 * Generate an AlbojCityGovEntry from a table row
+	 */
+	public function parse($row);
+}
 ?>
