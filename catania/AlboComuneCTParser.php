@@ -62,7 +62,7 @@ class AlboComuneCTDonwloader{
 						"%%Surrogate_aa1"=>1, "aa1"=>$from_date->format('Y'),
 						"%%Surrogate_gg2"=>1, "gg2"=>"31",
 						"%%Surrogate_mm2"=>1, "mm2"=>"12",
-						"%%Surrogate_aa2"=>1, "aa2"=>"2019"
+						"%%Surrogate_aa2"=>1, "aa2"=>"2100"
 				));
 		//curl_setopt($h, CURLOPT_HTTPHEADER, array("Accept-Charset: utf-8"));
 		$page=curl_exec($h);
